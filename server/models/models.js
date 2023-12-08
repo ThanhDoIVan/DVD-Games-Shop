@@ -71,7 +71,7 @@ BasketDvd.belongsTo(Dvd);
 Dvd.hasMany(Rating);
 Rating.belongsTo(Dvd);
 
-Dvd.hasMany(DvdInfo);
+Dvd.hasMany(DvdInfo, {as: 'info'});
 DvdInfo.belongsTo(Dvd);
 
 Genre.belongsToMany(Developer, {through: GenreDeveloper});
