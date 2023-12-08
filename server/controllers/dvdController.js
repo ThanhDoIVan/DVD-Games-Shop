@@ -21,7 +21,30 @@ class DvdController {
     }
 
     async getAll(req, res) {
+        let {genreId, developerId, limit, page} = req.query;
+        page = page || 1;
+        limit = limit || 9;
+        let offset = page * limit - limit;
 
+        let dvds;
+
+        if (!genreId && !developerId) {
+            dvds = await Dvd.findAndCountAll( {limit, offset} );
+        }
+
+        if (genreId && !developerId) {
+            dvds = await Dvd.findAndCountAll( {where: {genreId}, limit, offset} );
+        }
+
+        if (!genreId && developerId) {
+            dvds = await Dvd.findAndCountAll( {where: {developerId}, limit, offset} );
+        }
+
+        if (genreId && developerId) {
+            dvds = await Dvd.findAndCountAll( {where: {genreId, developerId}, limit, offset} );
+        }
+
+        return res.json(dvds);
     }
 
     async getOne(req, res) {
