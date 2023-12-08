@@ -20,7 +20,7 @@ class DvdController {
                         title: elem.title,
                         description: elem.description,
                         dvdId: dvd.id
-                    })
+                    });
                 });
             }
             
@@ -59,7 +59,12 @@ class DvdController {
     }
 
     async getOne(req, res) {
-        
+        const {id} = req.params;
+        const dvd = await Dvd.findOne({
+           where: {id},
+           include: [ {model: DvdInfo, as: 'info'} ] 
+        });
+        return res.json(dvd);
     }
 
 }
