@@ -12,11 +12,11 @@ const Basket = sequelize.define('basket', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
 });
 
-const BasketDVD = sequelize.define('basket_dvd', {
+const BasketDvd = sequelize.define('basket_dvd', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
 });
 
-const DVD = sequelize.define('dvd', {
+const Dvd = sequelize.define('dvd', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
@@ -40,7 +40,7 @@ const Rating = sequelize.define('rating', {
     name: {type: DataTypes.STRING, allowNull: false}
 });
 
-const DVDInfo = sequelize.define('dvd_info', {
+const DvdInfo = sequelize.define('dvd_info', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     title: {type: DataTypes.STRING, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: false}
@@ -56,23 +56,23 @@ Basket.belongsTo(User);
 User.hasMany(Rating);
 Rating.belongsTo(User);
 
-Basket.hasMany(BasketDVD);
-BasketDVD.belongsTo(Basket);
+Basket.hasMany(BasketDvd);
+BasketDvd.belongsTo(Basket);
 
-Genre.hasMany(DVD);
-DVD.belongsTo(Genre);
+Genre.hasMany(Dvd);
+Dvd.belongsTo(Genre);
 
-Developer.hasMany(DVD);
-DVD.belongsTo(Developer);
+Developer.hasMany(Dvd);
+Dvd.belongsTo(Developer);
 
-DVD.hasOne(BasketDVD);
-BasketDVD.belongsTo(DVD);
+Dvd.hasOne(BasketDvd);
+BasketDvd.belongsTo(Dvd);
 
-DVD.hasMany(Rating);
-Rating.belongsTo(DVD);
+Dvd.hasMany(Rating);
+Rating.belongsTo(Dvd);
 
-DVD.hasMany(DVDInfo);
-DVDInfo.belongsTo(DVD);
+Dvd.hasMany(DvdInfo);
+DvdInfo.belongsTo(Dvd);
 
 Genre.belongsToMany(Developer, {through: GenreDeveloper});
 Developer.belongsToMany(Genre, {through: GenreDeveloper});
@@ -80,11 +80,11 @@ Developer.belongsToMany(Genre, {through: GenreDeveloper});
 module.exports = {
     User, 
     Basket,
-    BasketDVD,
-    DVD,
+    BasketDvd,
+    Dvd,
     Genre,
     Developer,
     Rating,
-    DVDInfo,
+    DvdInfo,
     GenreDeveloper
 }

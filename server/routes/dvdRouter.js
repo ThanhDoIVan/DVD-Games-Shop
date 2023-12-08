@@ -1,8 +1,9 @@
 const Router = require('express');
 const router = new Router();
+const dvdController = require('../controllers/dvdController');
 
-router.post('/');
-router.get('/');
-router.get('/:id');
+router.post('/', dvdController.create);
+router.get('/', dvdController.getAll);
+router.get('/:id', dvdController.getOne);
 
 module.exports = router;
