@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import UserStore from './store/UserStore';
 import DvdStore from './store/DvdStore';
+import './styles/css/main.css';
 
 export const Context = React.createContext(null);
 
