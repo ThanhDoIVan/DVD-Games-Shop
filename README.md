@@ -7,3 +7,4 @@ console commands:
 4. npm i -D nodemon
 5. npm i express -fileupload
 6. npm i uuid
+7. npm i jsonwebtoken bcrypt
