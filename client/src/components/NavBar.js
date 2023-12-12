@@ -15,12 +15,12 @@ const NavBar = observer(() => {
                 </h1>
                 { user.isAuth ?
                     <div className="navbar__buttons">
-                        <button className="button">Admin</button>
-                        <button className="button">Sign Out</button>
+                        <button className="navbar__button">Admin</button>
+                        <button className="navbar__button">Sign Out</button>
                     </div>
                     :
                     <div className="navbar__buttons">
-                        <button className="button" onClick={ () => user.setIsAuth(true) }>Authorize</button>
+                        <button className="navbar__button" onClick={ () => user.setIsAuth(true) }>Authorize</button>
                     </div>
                 }
             </div>
