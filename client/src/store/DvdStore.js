@@ -21,6 +21,10 @@ export default class DvdStore {
             {id: '2', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
             {id: '3', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
             {id: '4', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
+            {id: '5', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
+            {id: '6', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
+            {id: '7', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
+            {id: '8', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Spider-Man_PS4_cover.jpg/220px-Spider-Man_PS4_cover.jpg'},
         ];
         this._selectedGenre = {};
         this._selectedDeveloper = {};

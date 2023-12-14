@@ -26,15 +26,15 @@
     padding: 8px 12px;
     font-size: 20px;
     border-radius: 8px;
-    background: #F6F6F6;
+    background: $input-color;
     transition: .3s;  
     text-transform: capitalize;
 
     &-active {
-        background: $active-color;
+        background: $accent-color;
     }
 
     &:hover {
-        background: $accent-color;
+        background: $active-color;
     }
 }
