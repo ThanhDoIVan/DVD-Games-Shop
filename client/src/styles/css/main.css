@@ -149,7 +149,7 @@ img {
 }
 
 .shop__catalog {
-  background-color: #fff;
+  background-color: #FFFEFE;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -256,4 +256,194 @@ img {
 .item__button:hover {
   background-color: #7B66FF;
   color: #FFFEFE;
+}
+
+.dvd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dvd__container {
+  display: grid;
+  width: 60%;
+  background: #FFFEFE;
+  box-shadow: 0px 2.767px 2.214px 0px rgba(0, 0, 0, 0.02), 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.03), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.04), 0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.04), 0px 41.778px 33.422px 0px rgba(0, 0, 0, 0.05), 0px 100px 80px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  margin: 30px 0;
+  padding: 18px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dvd__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.dvd__info {
+  padding-right: 20px;
+}
+
+.dvd__image {
+  width: 340px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.dvd__button {
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 20px;
+  width: 340px;
+  padding: 8px 14px;
+  background-color: #5FBDFF;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+.dvd__button:hover {
+  background-color: #7B66FF;
+  color: #FFFEFE;
+}
+
+.dvd__text {
+  line-height: 1.4;
+  text-align: justify;
+}
+.dvd__text-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+.dvd__text-price {
+  font-size: 22px;
+  font-style: italic;
+  color: #7B66FF;
+}
+.dvd__text-bold {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.admin {
+  padding-top: 20px;
+  display: flex;
+}
+
+.admin__panel {
+  width: 25%;
+  height: 250px;
+}
+
+.admin__list {
+  gap: 20px;
+}
+
+.admin__button {
+  font-size: 22px;
+  height: 60px;
+}
+
+.modal {
+  background-color: #FFFEFE;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-right: 20px;
+  width: calc(75% - 60px);
+  box-shadow: 0px 2.767px 2.214px 0px rgba(0, 0, 0, 0.02), 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.03), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.04), 0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.04), 0px 41.778px 33.422px 0px rgba(0, 0, 0, 0.05), 0px 100px 80px 0px rgba(0, 0, 0, 0.07);
+}
+
+.modal__title {
+  font-size: 28px;
+  text-align: center;
+}
+
+.modal__form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #323232;
+  border-bottom: 1px solid #323232;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal__input {
+  cursor: text;
+  width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  background: #F5F5F5;
+  text-transform: capitalize;
+  font-style: italic;
+  padding: 9px 11px;
+  font-size: 20px;
+}
+.modal__input[type=file] {
+  display: none;
+}
+.modal__input-file {
+  cursor: pointer;
+  background-color: #F1EAFF;
+}
+
+.modal__dropbox {
+  cursor: pointer;
+  width: 100%;
+  height: 44px;
+  border-radius: 5px;
+  background: #DCBFFF;
+  text-transform: capitalize;
+  padding: 9px 11px;
+  font-size: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  font-style: italic;
+  transition: 0.2s;
+}
+.modal__dropbox:hover {
+  background: #D0A2F7;
+}
+.modal__dropbox:focus {
+  outline: none;
+}
+
+.modal__info {
+  display: flex;
+  gap: 30px;
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.modal__buttons-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.modal__buttons-modify {
+  justify-content: space-between;
+}
+
+.modal__button {
+  font-weight: 600;
+  width: 130px;
+  padding: 8px 14px;
+  background-color: #DCBFFF;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+.modal__button-long {
+  width: 200px;
+}
+.modal__button:hover {
+  background-color: #D0A2F7;
 }/*# sourceMappingURL=main.css.map */

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../index";
-import { SHOP_ROUTE } from "../utils/consts";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../utils/consts";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import {observer} from "mobx-react-lite";
 
 
 const NavBar = observer(() => {
     const { user } = useContext(Context);
+    const history = useHistory();
     return (
         <div className="navbar">
             <div className="navbar__wrapper">
@@ -15,8 +16,12 @@ const NavBar = observer(() => {
                 </h1>
                 { user.isAuth ?
                     <div className="navbar__buttons">
-                        <button className="navbar__button">Admin</button>
-                        <button className="navbar__button">Sign Out</button>
+                        <button className="navbar__button" onClick={
+                            () => history.push(ADMIN_ROUTE)
+                        }>Admin</button>
+                        <button className="navbar__button" onClick={
+                            () => history.push(LOGIN_ROUTE)
+                        }>Sign Out</button>
                     </div>
                     :
                     <div className="navbar__buttons">

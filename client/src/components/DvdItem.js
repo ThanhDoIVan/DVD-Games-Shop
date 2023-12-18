@@ -11,7 +11,7 @@ const DvdItem = ({ dvd }) => {
                 <h2 className="item__title">{ dvd.name }</h2>
                 <p className="item__text">genre</p>
                 <p className="item__text">developer</p>
-                <p className="item__text">{dvd.release_date}</p>
+                <p className="item__text">rating: {dvd.rating}</p>
                 <p className="item__price">{dvd.price + '.00$'}</p>
             </div>
             <button className="item__button">Purchase</button>
