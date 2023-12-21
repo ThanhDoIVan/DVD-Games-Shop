@@ -6,12 +6,12 @@ const ApiError = require('../error/ApiError');
 class DvdController {
     async create(req, res, next) {
         try {
-            let {name, price, release_date, genreId, developerId, info} = req.body;
+            let {name, price, genreId, developerId, info} = req.body;
             const {img} = req.files;
             let fileName = uuid.v4() + ".jpg";
             img.mv(path.resolve(__dirname, '..', 'static', fileName));
 
-            const dvd = await Dvd.create( {name, price, release_date, genreId, developerId, img: fileName} )
+            const dvd = await Dvd.create( {name, price, genreId, developerId, img: fileName} )
 
             if (info) {
                 info = JSON.parse(info);

@@ -17,7 +17,7 @@ const AppRouter = () => {
                 <Route key={path} path={path} component={Component} exact/>
             )}
 
-            {/* <Redirect to={ SHOP_ROUTE }/> */}
+            <Redirect to={ SHOP_ROUTE }/>
         </Switch>
     );
 }

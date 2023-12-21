@@ -20,7 +20,6 @@ const Dvd = sequelize.define('dvd', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
-    release_date: {type: DataTypes.DATE, allowNull: false},
     img: {type: DataTypes.STRING, allowNull: false},
     rating: {type: DataTypes.INTEGER, defaultValue: 0}
 });
@@ -42,8 +41,8 @@ const Rating = sequelize.define('rating', {
 
 const DvdInfo = sequelize.define('dvd_info', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: false}
+    title: {type: DataTypes.TEXT, allowNull: false},
+    description: {type: DataTypes.TEXT, allowNull: false}
 });
 
 const GenreDeveloper = sequelize.define('genre_developer', {

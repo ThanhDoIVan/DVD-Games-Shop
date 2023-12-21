@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import DvdItem from "../components/DvdItem";
+import { Context } from "../index";
 
 const Basket = () => {
+    const {dvd} = useContext(Context)
     return (
-        <div>
-            BASKET
+        <div className="shop__catalog">
+            basket ball           
         </div>
     );
 }

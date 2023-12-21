@@ -2,32 +2,15 @@ import {makeAutoObservable} from 'mobx';
 
 export default class DvdStore {
     constructor() {
-        this._genres = [
-            {id: '1', name: 'Action'},
-            {id: '2', name: 'RPG'},
-            {id: '3', name: 'Fighting'},
-            {id: '4', name: 'Sport'},
-            {id: '5', name: 'Strategy'},
-        ];
-        this._developers = [
-            {id: '1', name: 'Insomniac'},
-            {id: '2', name: 'Blizzard'},
-            {id: '3', name: 'Ubisoft'},
-            {id: '4', name: 'CD Project Red'},
-            {id: '5', name: 'Namco Bandai'},
-        ];
-        this._dvds = [
-            {id: '1', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '2', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '3', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '4', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '5', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '6', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '7', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-            {id: '8', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'},
-        ];
+        this._genres = [];
+        this._developers = [];
+        this._dvds = [];
         this._selectedGenre = {};
         this._selectedDeveloper = {};
+        this._page = 1;
+        this._totalCount = 0;
+        this._limit = 8;
+
         makeAutoObservable(this); // Отслеживание изменений переменных
     }
 
@@ -44,12 +27,27 @@ export default class DvdStore {
     }
 
     setSelectedGenre(genre) {
+        this.setPage(1);
         this._selectedGenre = genre;
     }
 
     setSelectedDeveloper(developer) {
+        this.setPage(1);
         this._selectedDeveloper = developer;
     }
+
+    setPage(page) {
+        this._page = page;
+    }
+
+    setTotalCount(totalCount) {
+        this._totalCount = totalCount;
+    }
+
+    setLimit(limit) {
+        this._limit = limit;
+    }
+
 
     get genres() {
         return this._genres;
@@ -69,5 +67,17 @@ export default class DvdStore {
 
     get selectedDeveloper() {
         return this._selectedDeveloper;
+    }
+
+    get page() {
+        return this._page;
+    }
+
+    get totalCount() {
+        return this._totalCount;
+    }
+
+    get limit() {
+        return this._limit;
     }
 }

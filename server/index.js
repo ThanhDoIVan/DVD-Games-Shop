@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.use(cors());         // Позволяет браузеру обращаться к серверу
+app.use(cors({origin: true, credentials: true}));         // Позволяет браузеру обращаться к серверу
 app.use(express.json()); // Чтобы приложение могло парсить json формат
 app.use(fileUpload({})); // Для использования файлов (изображений)
 app.use(express.static(path.resolve(__dirname, 'static')));

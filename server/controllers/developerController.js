@@ -4,7 +4,7 @@ const ApiError = require('../error/ApiError');
 class DeveloperController {
     async create(req, res, next) {
         const {name} = req.body;
-        const duplicate = Developer.findOne({where: {name}});
+        const duplicate = await Developer.findOne({where: {name}});
         if (duplicate) {
             return next(ApiError.forbidden('Значение не должно повторяться'));
         }

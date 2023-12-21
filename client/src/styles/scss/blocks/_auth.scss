@@ -34,15 +34,18 @@
     height: 44px;
     border-radius: 5px;
     background: #F5F5F5;
-    text-transform: capitalize;
     font-style: italic;
     padding: 9px 11px;
+    &::placeholder {
+        text-transform: capitalize;
+    }
 }
 
 .auth__button {
     font-style: normal;
     color: #F5F5F5;
     background: #089FE0;
+    text-transform: capitalize;
 }
 
 .auth__form {

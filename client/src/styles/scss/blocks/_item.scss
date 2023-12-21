@@ -7,6 +7,7 @@
     border-radius: 12px;
     border: 1px solid $body-light-color;
     transition: .2s;
+    max-height: 460px;
 
     &:hover {
         background: #31304D;
@@ -21,6 +22,8 @@
     margin: 0 auto;
     border-radius: 6px;
     border: 1px solid $input-color;
+    object-fit: cover;
+    object-position: center;
 }
 
 .item__title {

@@ -2,9 +2,9 @@ const {Genre} = require('../models/models');
 const ApiError = require('../error/ApiError');
 
 class GenreController {
-    async create(req, res) {
+    async create(req, res, next) {
         const {name} = req.body;
-        const duplicate = Genre.findOne({where: {name}});
+        const duplicate = await Genre.findOne({where: {name}});
         if (duplicate) {
             return next(ApiError.forbidden('Значение не должно повторяться'));
         }

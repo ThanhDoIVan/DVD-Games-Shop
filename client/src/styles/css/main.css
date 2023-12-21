@@ -115,15 +115,21 @@ img {
   height: 44px;
   border-radius: 5px;
   background: #F5F5F5;
-  text-transform: capitalize;
   font-style: italic;
   padding: 9px 11px;
+}
+.auth__input::-moz-placeholder, .auth__button::-moz-placeholder {
+  text-transform: capitalize;
+}
+.auth__input::placeholder, .auth__button::placeholder {
+  text-transform: capitalize;
 }
 
 .auth__button {
   font-style: normal;
   color: #F5F5F5;
   background: #089FE0;
+  text-transform: capitalize;
 }
 
 .auth__form {
@@ -210,6 +216,7 @@ img {
   border-radius: 12px;
   border: 1px solid #EDE3DA;
   transition: 0.2s;
+  max-height: 460px;
 }
 .item:hover {
   background: #31304D;
@@ -223,6 +230,10 @@ img {
   margin: 0 auto;
   border-radius: 6px;
   border: 1px solid #F6F6F6;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .item__title {
@@ -379,10 +390,15 @@ img {
   height: 44px;
   border-radius: 5px;
   background: #F5F5F5;
-  text-transform: capitalize;
   font-style: italic;
   padding: 9px 11px;
   font-size: 20px;
+}
+.modal__input::-moz-placeholder {
+  text-transform: capitalize;
+}
+.modal__input::placeholder {
+  text-transform: capitalize;
 }
 .modal__input[type=file] {
   display: none;
@@ -444,6 +460,79 @@ img {
 .modal__button-long {
   width: 200px;
 }
+.modal__button-dropdown {
+  width: 100%;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 9px 11px;
+  border-radius: 5px;
+  height: 44px;
+}
 .modal__button:hover {
   background-color: #D0A2F7;
+}
+
+.modal__dropdown {
+  display: inline-block;
+  position: relative;
+}
+.modal__dropdown:hover .modal__options {
+  display: block;
+  z-index: 1;
+}
+
+.modal__options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.modal__options .modal__option {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 9px 11px;
+  border-radius: 5px;
+  height: 44px;
+  background-color: #DCBFFF;
+}
+.modal__options .modal__option:hover {
+  color: #323232;
+  background-color: #D0A2F7;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.page {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
+  font-weight: 700;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+.page:hover {
+  background: #EDE3DA;
+}
+.page-active {
+  background: #EDE3DA;
 }/*# sourceMappingURL=main.css.map */

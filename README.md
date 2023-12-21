@@ -12,3 +12,6 @@ console commands (backend):
 console commands (client):
 1. cd client
 2. npx create-react-app .
+3. npm i axios react-router-dom mobx mobx-react-lite
+4. npm i dotenv
+5. npm i jwt-decode
