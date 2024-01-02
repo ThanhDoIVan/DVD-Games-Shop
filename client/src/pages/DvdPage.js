@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { fetchOneDvd } from "../http/dvdApi";
+import Ratings from "../components/Ratings";
 
 const DvdPage = () => {
     // const dvd = {id: '1', name: 'Spider Man', price: '50', rating: 5, release_date: '2019-03-19', img: 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg'};
@@ -16,7 +17,7 @@ const DvdPage = () => {
     const {id} = useParams();
     useEffect( () => {
         fetchOneDvd(id).then( (data) => setDvd(data))
-    }, []);
+    }, [id]);
 
     const descriptionObject = dvd.info.find( (elem) => elem.title === 'description');
     return (
@@ -25,6 +26,7 @@ const DvdPage = () => {
                 <div className="dvd__wrapper">
                     <img className="dvd__image" src={process.env.REACT_APP_API_URL + dvd.img} alt={dvd.name} />
                     <button className="dvd__button">Purchase</button>
+                    <Ratings />
                 </div>
                 <div className="dvd__info">
                     <h2 className="dvd__text-title">{dvd.name}</h2>

@@ -535,4 +535,33 @@ img {
 }
 .page-active {
   background: #EDE3DA;
+}
+
+.ratings {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.rating {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
+  font-weight: 700;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+.rating:hover {
+  background: #EDE3DA;
+}
+.rating-active {
+  background: #EDE3DA;
 }/*# sourceMappingURL=main.css.map */

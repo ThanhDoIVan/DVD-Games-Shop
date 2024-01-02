@@ -6,7 +6,6 @@ const Pages = observer(() => {
     const {dvd} = useContext(Context);
     const pageCount = Math.ceil(dvd.totalCount / dvd.limit);
     const pages = [];
-    console.log(dvd.totalCount, dvd.limit);
 
     for (let i = 0; i < pageCount; i++) {
         pages.push(i + 1);

@@ -17,14 +17,14 @@ const Shop = observer(() => {
             dvd.setDvds(data.rows);
             dvd.setTotalCount(data.count);
         });
-    }, []);
+    }, [dvd]);
 
     useEffect( () => {
         fetchDvds(dvd.selectedGenre.id, dvd.selectedDeveloper.id, dvd.page, 8).then( (data) => {
             dvd.setDvds(data.rows);
             dvd.setTotalCount(data.count);
         });
-    }, [dvd.page, dvd.selectedGenre, dvd.selectedDeveloper]);
+    }, [dvd, dvd.page, dvd.selectedGenre, dvd.selectedDeveloper]);
 
     return (
         <div>

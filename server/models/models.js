@@ -36,7 +36,7 @@ const Developer = sequelize.define('developer', {
 
 const Rating = sequelize.define('rating', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING, allowNull: false}
+    rate: {type: DataTypes.INTEGER, allowNull: false}
 });
 
 const DvdInfo = sequelize.define('dvd_info', {

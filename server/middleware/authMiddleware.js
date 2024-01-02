@@ -9,12 +9,14 @@ module.exports = function (req, res, next) {
         const token = req.headers.authorization.split(' ')[1]; 
         // Отделяем тип токена (Bearer) от самого токена
         if (!token) {
+            // alert('Пользователь не авторизован');
             return res.status(401).json({message: 'Не авторизован'});
         }
         const decoded = jwt.verify(token, process.env.SECRET_KEY);
         req.user = decoded;
         next();
     } catch(e) {
-        res.status(401).json({message: 'Не авторизован'});
+        // alert('Пользователь не авторизован');
+        res.status(401).json({message: 'Не авторизован 1'});
     }
 }
