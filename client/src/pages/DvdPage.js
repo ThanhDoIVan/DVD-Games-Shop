@@ -24,7 +24,7 @@ const DvdPage = () => {
         <div className="dvd">
             <div className="dvd__container">
                 <div className="dvd__wrapper">
-                    <img className="dvd__image" src={process.env.REACT_APP_API_URL + dvd.img} alt={dvd.name} />
+                    { dvd.img && <img className="dvd__image" src={process.env.REACT_APP_API_URL + dvd.img} alt={dvd.name} />}
                     <button className="dvd__button">Purchase</button>
                     <Ratings />
                 </div>
